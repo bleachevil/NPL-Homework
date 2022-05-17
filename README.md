@@ -122,7 +122,11 @@ eth_df.head()
 btc_df.describe()
 eth_df.describe()
 ```
-pic btc and eth decr
+#### Bitcoin
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/btc_desc.png?raw=true)
+
+#### Ethereum
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/eth_desc.png?raw=true)
 
 ### Question and Answer
 
