@@ -33,7 +33,7 @@ btc_headlines = newsapi.get_everything(
 
 btc_headlines
 ```
-pic btc news
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/BTCnews.png?raw=true)
 
 ### Fetch the Ethereum news articles
 ```
@@ -43,7 +43,7 @@ eth_headlines = newsapi.get_everything(
 
 eth_headlines
 ```
-pic eth news
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/ETHnews.png?raw=true)
 
 ### Create the Bitcoin sentiment scores DataFrame
 ```
@@ -79,7 +79,7 @@ btc_df = btc_df[cols]
 
 btc_df.head()
 ```
-pic btc sorce 
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/BTCscoredatabase.png?raw=true)
 
 ### Create the Ethereum sentiment scores DataFrame
 ```
@@ -115,7 +115,7 @@ eth_df = eth_df[cols]
 
 eth_df.head()
 ```
-pic eth score
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/ETHscoredatabase.png?raw=true)
 
 ### Describe the Bitcoin & Ethereum Sentiment
 ```
@@ -175,7 +175,11 @@ def tokenizer(text):
 tokenizer(btc_headlines["articles"][0]['content'])
 tokenizer(eth_headlines["articles"][0]['content'])
 ```
-pic tokens column
+#### Bitcoin
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/btctoken.png?raw=true)
+
+#### Ethereum
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/ethtoken.png?raw=true)
 
 ### NGrams and Frequency Analysis
 ```
@@ -189,7 +193,7 @@ processed_btc = tokenizer(btc_headlines["articles"][0]['content'])
 btc_counts = Counter(ngrams(processed_btc, n=2))
 btc_counts
 ```
-pic Ngram btc
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/btcngram.png?raw=true)
 
 ### Generate the Ethereum N-grams where N=2
 ```
@@ -197,7 +201,7 @@ processed_eth = tokenizer(eth_headlines["articles"][0]['content'])
 eth_counts = Counter(ngrams(processed_eth, n=2))
 eth_counts
 ```
-pic Ngram eth
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/ethngram.png?raw=true)
 
 ### Function token_count generates the top 10 words for a given coin
 ```
@@ -207,7 +211,11 @@ def token_count(tokens, N=3):
 token_count(processed_btc, N=3)
 token_count(processed_eth, N=3)
 ```
-pic of top 10
+#### Bitcoin
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/top10btc.png?raw=true)
+
+#### Ethereum
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/top10eth.png?raw=true)
 
 ### Word Clouds
 ```
@@ -225,7 +233,7 @@ wc_btc = WordCloud().generate(big_string)
 plt.imshow(wc_btc)
 plt.title("Bitcoin word cloud", fontsize=48)
 ```
-pic of btc word cloud
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/btcwordcloud.png?raw=true)
 
 ### Generate the Ethereum word cloud
 ```
@@ -234,7 +242,7 @@ wc_eth = WordCloud().generate(big_string)
 plt.imshow(wc_eth)
 plt.title("Ethereum word cloud", fontsize=48)
 ```
-pic of eth word cloud
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/ethwordcloud.png?raw=true)
 
 
 ### Named Entity Recognition
@@ -254,11 +262,12 @@ doc_btc = nlp(right_btc)
 doc_btc.user_data["title"] = "Bitcoin NER"
 displacy.render(doc_btc, style='ent')
 ```
-pic of btc NER
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/btcNER.png?raw=true)
+
 ```
 print([ent.text for ent in doc_btc.ents])
 ```
-pic of list entities
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/btclistofentities.png?raw=true)
 
 ### Eehereum NER
 ```
@@ -270,8 +279,8 @@ doc_eth = nlp(right_eth)
 doc_eth.user_data["title"] = "Ethereum NER"
 displacy.render(doc_eth, style='ent')
 ```
-pic of eth NER
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/ethNER.png?raw=true)
 ```
 print([ent.text for ent in doc_eth.ents])
 ```
-pic of list of Entiites
+![](https://github.com/bleachevil/NPL-Homework/blob/main/pic/ethlistofentities.png?raw=true)
